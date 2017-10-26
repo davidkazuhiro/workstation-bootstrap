@@ -32,3 +32,5 @@ mkdir -p ~/git/ghe
 
 # BitBucket
 ## Does public keys work?
+
+# Enable Japanese Input
