@@ -14,7 +14,21 @@
 # Install atom
 # Configure Terminal
 
-# Clone github repos
-mkdir -p ~/git/github/davidkazuhiro
+# SSH
+## Generate Keys
+## Add config for login servers
 
-# Clone ghe repos
+# GitHub
+## Add public key to GitHub
+
+## Clone all repos
+mkdir -p ~/git/github/
+
+# GHE
+## Add public key to GitHub
+
+## Clone all repos
+mkdir -p ~/git/ghe
+
+# BitBucket
+## Does public keys work?
