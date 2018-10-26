@@ -54,7 +54,7 @@ brew cask install visual-studio-code
 
 ## Clone all repos
 clone_repos() {
-  #mkdir -p "$HOME/git/github/$1"
+  mkdir -p "$HOME/git/github/$1"
   while read repo; do
     git clone $(echo ${repo} | cut -d ' ' -f 2) $HOME/git/github/${1}/$(echo ${repo} | cut -d ' ' -f 1)
   done < <(curl -s "https://api.github.com/${1}/${2}/repos?per_page=200" | jq -r '.[] | .name + " " + .ssh_url')
