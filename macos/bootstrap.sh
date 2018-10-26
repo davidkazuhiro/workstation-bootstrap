@@ -1,17 +1,48 @@
-# Install Outlook
-# Install Wivia
-# Install Line
+#!/bin/bash
+
+# Not in Brew
+# LINE
+# ChefDK
+# Outlook
+# Wivia
+
+# homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+
 # Install Synergy
-# Install chrome
-# Install Slack
-# Install Hipchat
-# Install Docker
-# Install homebrew
-# Install git (dev tools?)
-# Install Virtualbox
-# Install Vagrant
-# Install Chefdk
-# Install atom
+brew cask install synergy
+
+# Secret Management
+brew cask install gpg-suite
+
+# Install Browsers
+brew cask install google-chrome
+brew cask install firefox
+
+# Chat
+brew cask install hipchat
+brew cask install slack
+brew cask install microsoft-teams
+
+# git
+brew install git
+
+# Virtualization Tools
+brew cask install vmware-fusion
+brew cask install virtualbox
+brew cask install vagrant
+brew install terraform
+brew cask install docker
+brew cask install hab
+
+# Network Tools
+brew cask install wireshark
+
+
+# Editors
+brew cask install visual-studio-code
+
 # Configure Terminal
 
 # SSH
@@ -22,7 +53,16 @@
 ## Add public key to GitHub
 
 ## Clone all repos
-mkdir -p ~/git/github/
+clone_repos() {
+  #mkdir -p "$HOME/git/github/$1"
+  while read repo; do
+    git clone $(echo ${repo} | cut -d ' ' -f 2) $HOME/git/github/${1}/$(echo ${repo} | cut -d ' ' -f 1)
+  done < <(curl -s "https://api.github.com/${1}/${2}/repos?per_page=200" | jq -r '.[] | .name + " " + .ssh_url')
+}
+
+clone_repos users davidkazuhiro
+clone_repos orgs rakutentech
+
 
 # GHE
 ## Add public key to GitHub
@@ -31,6 +71,6 @@ mkdir -p ~/git/github/
 mkdir -p ~/git/ghe
 
 # BitBucket
-## Does public keys work?
+## Do public keys work?
 
 # Enable Japanese Input
