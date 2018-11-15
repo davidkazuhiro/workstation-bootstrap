@@ -10,6 +10,9 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 
+# Install laspass-cli
+brew install lastpass-cli
+
 # Install Synergy
 brew cask install synergy
 
@@ -24,6 +27,7 @@ brew cask install firefox
 brew cask install hipchat
 brew cask install slack
 brew cask install microsoft-teams
+brew cask install gitter
 
 # git
 brew install git
