@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Not in Brew
-# LINE
-# ChefDK
+# Provided by default
 # Outlook
-# Wivia
 
 # Install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -65,3 +62,6 @@ clone_repos project DSH
 clone_repos user david.somers-harris
 
 # Enable Japanese Input
+
+# Wivia
+# ChefDK
